@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>iskrivenko@proton.me</email>
+    <name>Igor Krivenko</name>
+  </maintainer>
+  <longdescription>
+    Fork of KeePassX that aims to incorporate stalled Pull Requests,
+	features, and bug fixes that are not being incorporated into
+	the main KeePassX baseline.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">keepassxreboot/keepassxc</remote-id>
+  </upstream>
+</pkgmetadata>
