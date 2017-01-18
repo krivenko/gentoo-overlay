@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -15,16 +15,23 @@ EGIT_REPO_URI=(
 LICENSE="LGPL-2.1 GPL-2 GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug test"
+#IUSE="autotype debug http test -yubikey"
+IUSE="autotype debug http test"
 
 RDEPEND="dev-libs/libgcrypt:=
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtwidgets:5
 	dev-qt/qtnetwork:5
-	net-libs/libmicrohttpd
 	sys-libs/zlib
+	net-libs/libmicrohttpd
+	autotype? (
+		x11-libs/libXi
+		x11-libs/libXtst
+		dev-qt/qtx11extras:5
+	)
 "
+# yubikey? ( sys-auth/libyubikey )
 DEPEND="${RDEPEND}
 	dev-qt/linguist-tools:5
 	dev-qt/qtconcurrent:5
@@ -40,15 +47,11 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
+		-DWITH_XC_AUTOTYPE="$(usex autotype)"
+		-DWITH_XC_HTTP="$(usex http)"
 		-DWITH_TESTS="$(usex test)"
 		-DWITH_GUI_TESTS=OFF
 	)
+#	-DWITH_XC_YUBIKEY="$(usex yubikey)"
 	cmake-utils_src_configure
-}
-
-pkg_postinst() {
-	elog "Optional dependencies for auto-type on X11:"
-	elog "  x11-libs/libXi"
-	elog "  x11-libs/libXtst"
-	elog "  dev-qt/qtx11extras:5"
 }
