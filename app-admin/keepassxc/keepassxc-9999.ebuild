@@ -4,13 +4,20 @@
 
 EAPI=6
 
-inherit cmake-utils git-r3
+SCM=""
+[[ "${PV}" == 9999 ]] && SCM="git-r3"
+inherit cmake-utils ${SCM}
+unset SCM
 
 DESCRIPTION="KeePassXC - KeePass Cross-platform Community Edition"
 HOMEPAGE="https://github.com/keepassxreboot/keepassxc"
-EGIT_REPO_URI=(
-	"https://github.com/keepassxreboot/${PN}"
-)
+
+if [[ "${PV}" != 9999 ]] ; then
+	SRC_URI="https://github.com/keepassxreboot/keepassxc/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+else
+	EGIT_REPO_URI="https://github.com/keepassxreboot/${PN}"
+fi
 
 LICENSE="LGPL-2.1 GPL-2 GPL-3"
 SLOT="0"
