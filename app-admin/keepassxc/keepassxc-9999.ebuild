@@ -30,7 +30,7 @@ RDEPEND="dev-libs/libgcrypt:=
 	dev-qt/qtwidgets:5
 	dev-qt/qtnetwork:5
 	sys-libs/zlib
-	net-libs/libmicrohttpd
+	http? ( net-libs/libmicrohttpd )
 	autotype? (
 		x11-libs/libXi
 		x11-libs/libXtst
