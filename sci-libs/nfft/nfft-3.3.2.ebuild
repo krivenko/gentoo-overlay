@@ -1,10 +1,9 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
-inherit autotools-utils toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="library for nonequispaced discrete Fourier transformations"
 HOMEPAGE="http://www-user.tu-chemnitz.de/~potts/nfft"
@@ -28,5 +27,5 @@ src_configure() {
 	    --enable-all
 		$(use_enable openmp)
 	)
-	autotools-utils_src_configure
+	econf ${myeconfargs}
 }
