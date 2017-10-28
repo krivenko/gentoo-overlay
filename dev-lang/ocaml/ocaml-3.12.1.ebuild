@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="1"
 
@@ -8,7 +7,7 @@ inherit flag-o-matic eutils multilib versionator toolchain-funcs
 
 PATCHLEVEL="3"
 MY_P="${P/_/+}"
-DESCRIPTION="Fast modern type-inferring functional programming language descended from the ML family"
+DESCRIPTION="Type-inferring functional programming language descended from the ML family"
 HOMEPAGE="http://www.ocaml.org/"
 SRC_URI="ftp://ftp.inria.fr/INRIA/Projects/cristal/ocaml/ocaml-$(get_version_component_range 1-2)/${MY_P}.tar.bz2
 	mirror://gentoo/${PN}-patches-${PATCHLEVEL}.tar.bz2"
@@ -102,7 +101,7 @@ src_install() {
 
 	# Symlink the headers to the right place
 	dodir /usr/include
-	dosym /usr/$(get_libdir)/ocaml/caml /usr/include/
+	dosym usr/$(get_libdir)/ocaml/caml /usr/include/
 
 	# Remove ${D} from ld.conf, as the buildsystem isn't $(DESTDIR) aware
 	dosed "s:${D}::g" /usr/$(get_libdir)/ocaml/ld.conf

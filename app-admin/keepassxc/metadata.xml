@@ -7,8 +7,8 @@
   </maintainer>
   <longdescription>
     Fork of KeePassX that aims to incorporate stalled Pull Requests,
-	features, and bug fixes that are not being incorporated into
-	the main KeePassX baseline.
+    features, and bug fixes that are not being incorporated into
+    the main KeePassX baseline.
   </longdescription>
   <use>
    <flag name="autotype">Auto-type passwords in input fields</flag>
