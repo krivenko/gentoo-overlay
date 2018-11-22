@@ -1,0 +1,13 @@
+<repositories version="1.0">
+<repo quality="experimental" status="unofficial">
+    <name>krivenko</name>
+    <description lang="en">Repository for zotero and other things</description>
+    <homepage>https://github.com/krivenko/gentoo-overlay</homepage>
+    <owner type="person">
+        <email>krivenko@umich.edu</email>
+        <name>Igor Krivenko</name>
+    </owner>
+    <source type="git">https://github.com/krivenko/gentoo-overlay.git</source>
+    <feed>https://github.com/krivenko/gentoo-overlay/commits/master.atom</feed>
+</repo>
+</repositories>
