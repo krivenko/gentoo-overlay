@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="1"
@@ -19,7 +19,7 @@ IUSE="emacs gdbm latex ncurses +ocamlopt tk X xemacs"
 
 RDEPEND="tk? ( >=dev-lang/tk-3.3.3 )
 	ncurses? ( sys-libs/ncurses )
-	X? ( x11-libs/libX11 x11-proto/xproto )
+	X? ( x11-libs/libX11 x11-base/xorg-proto )
 	gdbm? ( sys-libs/gdbm )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
