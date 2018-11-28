@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="5"
@@ -11,7 +11,7 @@ SRC_URI="http://www-user.tu-chemnitz.de/~potts/nfft/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="openmp static-libs"
 
 RDEPEND="sci-libs/fftw:3.0[threads,openmp?]"
@@ -24,7 +24,7 @@ pkg_pretend() {
 
 src_configure() {
 	local myeconfargs=(
-	    --enable-all
+		--enable-all
 		$(use_enable openmp)
 	)
 	econf ${myeconfargs}

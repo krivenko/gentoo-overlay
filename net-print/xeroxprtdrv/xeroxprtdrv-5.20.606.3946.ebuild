@@ -32,7 +32,7 @@ src_prepare() {
 
 	# Unpack man pages
 	pushd usr/share/man/man1
-	unpack $WORKDIR/usr/share/man/man1/*.1.gz
+	unpack "$WORKDIR"/usr/share/man/man1/*.1.gz
 	popd
 }
 
