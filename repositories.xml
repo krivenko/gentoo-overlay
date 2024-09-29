@@ -1,7 +1,7 @@
 <repositories version="1.0">
 <repo quality="experimental" status="unofficial">
     <name>krivenko</name>
-    <description lang="en">Repository for Zotero, Lmod and other things</description>
+    <description lang="en">Repository for some packages missing from the main tree</description>
     <homepage>https://github.com/krivenko/gentoo-overlay</homepage>
     <owner type="person">
         <email>iskrivenko@proton.me</email>
